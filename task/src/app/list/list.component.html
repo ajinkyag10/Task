@@ -1,0 +1,20 @@
+
+      <div class="container">
+            <h1 class = "text-center text-success">Search a Movie Title Below</h1>
+            <p class = "text-center text-dark">This application utilizes OMDb API data for all results 
+                (<a href="http://www.omdbapi.com" target="_blank">http://www.omdbapi.com</a>)</p>
+              <form class="form-inlin justify-content-center">
+            <input class="form-control mr-sm-2" type="search"  [(ngModel)]="filtertext" 
+            placeholder="Search"  name="search" aria-label="Search">
+            <div class="col text-center my-1">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+          </form>
+      </div>
+    
+<div *ngFor="let result of searchItem |searchfilter:filtertext">
+    <div class="row">
+        <div class = "">{{result.name}}</div>
+    </div>
+</div>
+
